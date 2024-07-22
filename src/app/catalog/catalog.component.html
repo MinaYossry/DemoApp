@@ -10,7 +10,10 @@
   <ul class="products">
     @for (product of getFilteredProducts(); track $index) {
     <li class="product-item">
-      <app-product-details></app-product-details>
+      <app-product-details
+        [product]="product"
+        (buy)="addToCart(product)"
+      ></app-product-details>
     </li>
     }
   </ul>
